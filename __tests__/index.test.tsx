@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import Home from '@/pages/index'
+import Home from "../src/pages"
 
 describe('Home', () => {
-  it('renders a heading', () => {
+  beforeEach(() => {
     render(<Home />)
+  })
 
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
-
+  it('renders a heading', () => {
+    const heading = screen.getByText(/Go to Users/)
     expect(heading).toBeInTheDocument()
   })
+
+
 })
